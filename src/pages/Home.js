@@ -6,6 +6,7 @@ import MainHome from '../components/MainHome';
 const MainContainer = styled.div`
     display:flex;
     flex-direction:row;
+    font-family: 'Fira Code', monospace;
     justify-content: space-between;
     overflow-x:hidden;
 `;
@@ -34,7 +35,17 @@ export default function Home() {
                     left: '95vw'
                 }}
             />
-
+            <div
+                style={{
+                    overflowX: 'hidden',
+                    position: 'absolute',
+                    width: '10vw',
+                    height: '90px',
+                    border: '1px solid #ABB2BF',
+                    top: '40vh',
+                    left: '-8vw'
+                }}
+            />
         </MainContainer>
     )
 }

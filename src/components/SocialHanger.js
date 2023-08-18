@@ -1,7 +1,7 @@
 import React from 'react'
 import { ReactComponent as Github } from '../files/Github.svg'
 import { ReactComponent as LinkedIn } from '../files/Linkedin.svg'
-import { ReactComponent as Mail } from '../files/Email.svg'
+import { ReactComponent as Instagram } from '../files/Instagram.svg'
 import styled from 'styled-components';
 
 const Hanger = styled.div`
@@ -27,7 +27,13 @@ const ImageContainer = ({ children, href }) => {
 
 function SocialHanger({ fake }) {
     return (
-        <Container style={fake ? ({ marginRight: '20px', marginLeft: '0px', visibility: 'hidden' }) : ({})}>
+        <Container style={
+            fake ? ({
+                marginRight: '20px',
+                marginLeft: '0px',
+                visibility: 'hidden'
+            }) : ({})
+        }>
             <Hanger />
             <ImageContainer href="roka.dev">
                 <Github />
@@ -36,7 +42,7 @@ function SocialHanger({ fake }) {
                 <LinkedIn />
             </ImageContainer>
             <ImageContainer href="roka.dev">
-                <Mail />
+                <Instagram />
             </ImageContainer>
         </Container>
     )

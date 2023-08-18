@@ -8,7 +8,6 @@ import { ReactComponent as Quotes } from '../files/Quotes.svg'
 const Container = styled.div`
 display:flex;
 flex-direction:column;
-font-family: 'Fira Code', monospace;
 align-items:center;
 
 `;
@@ -43,7 +42,6 @@ const InfoContainer = styled.div`
     white-space: normal;
     width: 537px;
     height: 227px;
-    font-family: 'Fira Code', monospace;
 `;
 
 const ImageContainer = styled.div`
@@ -108,32 +106,82 @@ function MainHome() {
                         Contact Me
                     </ContactButton>
                 </InfoContainer>
+
                 <div style={{ width: "18px" }} />
+
                 <ImageContainer>
                     <Image>
-                        <BackgroundLogo style={{ position: 'absolute', zIndex: '0' }} />
-                        <img src={meImage} style={{ zIndex: '1', position: 'relative' }} />
-                        <Dots style={{ position: 'absolute', zIndex: '3', marginLeft: "-5%", marginTop: "10%" }} />
+                        <BackgroundLogo style={{
+                            position: 'absolute',
+                            zIndex: '0'
+                        }} />
+                        <img src={meImage} style={{
+                            zIndex: '1',
+                            position: 'relative'
+                        }} />
+                        <Dots style={{
+                            position: 'absolute',
+                            zIndex: '3',
+                            marginLeft: "-5%",
+                            marginTop: "10%"
+                        }} />
                     </Image>
+
                     <CurrentlyWorking>
-                        <div style={{ width: "16px", height: "16px", backgroundColor: '#C778DD', margin: '5px' }} />
+                        <div style={{
+                            width: "16px",
+                            height: "16px",
+                            backgroundColor: '#C778DD',
+                            margin: '5px'
+                        }} />
                         <span style={{
-                            fontSize: '16px', color: "#ABB2BF"
-                        }}>Currently working on&nbsp;</span>
+                            fontSize: '16px',
+                            color: "#ABB2BF"
+                        }}>
+                            Currently working on&nbsp;</span>
                         <span style={{
-                            fontSize: '16px', color: "white"
-                        }}> Portfolio</span>
+                            fontSize: '16px',
+                            color: "white"
+                        }}>
+                            Portfolio</span>
                     </CurrentlyWorking>
                 </ImageContainer>
             </MeContainer>
             <div style={{ height: '47px' }} />
             <QuoteContainer>
-                <div style={{ width: ' calc(100% - 66px)', fontWeight: 'bold', color: 'white', textAlign: 'left', fontSize: '24px', border: '1px solid #ABB2BF', padding: '32px' }}>
-                    <Quotes style={{ position: 'absolute', marginTop: '-48px', marginLeft: '-24px' }} />
+                <div style={{
+                    width: ' calc(100% - 66px)',
+                    fontWeight: 'bold',
+                    color: 'white',
+                    textAlign: 'left',
+                    fontSize: '24px',
+                    border: '1px solid #ABB2BF',
+                    padding: '32px'
+                }}>
+
+                    <Quotes style={{
+                        position: 'absolute',
+                        marginTop: '-48px',
+                        marginLeft: '-24px'
+                    }} />
                     If our era is the next Industrial Revolution, as many claim, AI is surely one of its driving forces.
                 </div>
-                <div style={{ alignSelf: 'flex-end', width: '30%', color: 'white', textAlign: 'left', fontSize: '24px', border: '1px solid #ABB2BF', padding: '16px' }}>
-                    <Quotes style={{ position: 'absolute', marginTop: '-32px', marginLeft: '181px' }} />
+
+
+                <div style={{
+                    alignSelf: 'flex-end',
+                    width: '30%',
+                    color: 'white',
+                    textAlign: 'left',
+                    fontSize: '24px',
+                    border: '1px solid #ABB2BF',
+                    padding: '16px'
+                }}>
+                    <Quotes style={{
+                        position: 'absolute',
+                        marginTop: '-32px',
+                        marginLeft: '181px'
+                    }} />
                     -Fei Fei Li
                 </div>
             </QuoteContainer>

@@ -4,7 +4,6 @@ import { ReactComponent as RokaLogo } from '../files/Logo.svg';
 const HeaderLink = styled.a`
   font-size: 16px;
   display: inline-block;
-  font-family: 'Fira Code', monospace;
   text-decoration: none;
   font-weight: bold;
   
@@ -29,7 +28,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   width: 100%; 
-  position: relative;  // This will help in case you want to add other absolutely positioned elements related to the container
+  position: relative;  
 `;
 
 const NavBar = styled.div`
@@ -48,8 +47,8 @@ const ListContainer = styled.div`
     display:flex;
     flex-direction:row;
     align-self:flex-end;
-    flex: 0 0 auto;  // Don't grow, don't shrink, auto basis
-    margin-left: auto; // push the container to the right
+    flex: 0 0 auto;
+    margin-left: auto;
 `;
 
 
@@ -80,8 +79,12 @@ function Navigation() {
     <Container>
       <NavBar>
         <LogoContainer href="https://roka.dev">
-          <RokaLogo style={{ marginRight: "8px", height: "16px", width: "16px" }} />
-          <h2 style={{ fontSize: "16px", fontFamily: "'Fira Code', monospace;" }}>
+          <RokaLogo style={{
+            marginRight: "8px",
+            height: "16px",
+            width: "16px"
+          }} />
+          <h2 style={{ fontSize: "16px" }}>
             Roka
           </h2>
         </LogoContainer>
