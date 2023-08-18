@@ -24,28 +24,6 @@ export default function Home() {
                 <MainHome />
             </HomeContainer>
             <SocialHanger fake={true} />
-            <div
-                style={{
-                    overflowX: 'hidden',
-                    position: 'absolute',
-                    width: '10vw',
-                    height: '90px',
-                    border: '1px solid #ABB2BF',
-                    top: '80vh',
-                    left: '95vw'
-                }}
-            />
-            <div
-                style={{
-                    overflowX: 'hidden',
-                    position: 'absolute',
-                    width: '10vw',
-                    height: '90px',
-                    border: '1px solid #ABB2BF',
-                    top: '40vh',
-                    left: '-8vw'
-                }}
-            />
         </MainContainer>
     )
 }

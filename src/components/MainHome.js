@@ -56,7 +56,7 @@ const QuoteContainer = styled.div`
     display:flex;
     flex-direction:column;
     width:712px;
-    height:233px;
+    height:auto;
 
 `;
 

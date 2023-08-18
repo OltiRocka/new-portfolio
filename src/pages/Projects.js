@@ -40,7 +40,7 @@ const Heading = styled.div`
 
 export default function Projects() {
     return (
-        <div style={{ height: '100vh' }}>
+        <div style={{ height: 'auto' }}>
             <Container>
                 <Handler>
                     <Heading>
@@ -57,30 +57,6 @@ export default function Projects() {
 
                 </ProjectsContainer>
             </Container>
-            <div
-                style={{
-                    overflowX: 'hidden',
-                    position: 'absolute',
-                    width: '10vw',
-                    height: '90px',
-                    border: '1px solid #ABB2BF',
-                    top: '105vh',
-                    left: '-1vw'
-                }}
-            />
-
-            <div
-                style={{
-                    overflowX: 'hidden',
-                    position: 'absolute',
-                    width: '10vw',
-                    height: '90px',
-                    border: '1px solid #ABB2BF',
-                    top: '155vh',
-                    left: '99vw'
-                }}
-            />
-
         </div>
 
     )
