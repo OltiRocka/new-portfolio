@@ -27,7 +27,8 @@
   font-family: "Fira Code", monospace;
   border: 1px solid #abb2bf;
   margin-bottom: 15px;
-  color: #333;
+  background-color: transparent;
+  color: #abb2bf;
   font-size: 16px;
 }
 
