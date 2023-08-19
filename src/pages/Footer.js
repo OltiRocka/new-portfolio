@@ -17,11 +17,15 @@ const Container = styled.div`
 
 const MyData = styled.div`
   height: auto;
-  width: 85%;
+  width: 75%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  &:div{
+    flex:1;
+  }
 `;
 
 const MediaContainer = styled.div`
@@ -55,6 +59,7 @@ const Socials = styled.div`
   height: auto;
   display: flex;
   flex-direction: row;
+  margin-top:0;
 `;
 
 export default function Footer() {
@@ -73,11 +78,11 @@ export default function Footer() {
             <h2 style={{ fontSize: "16px" }}>Roka</h2>
           </LogoContainer>
           <p style={{ color: "white", fontSize: "16px" }}>
-            Data Scientist and Back-end Developer
+            Data Scientist and<br/> Back-end Developer
           </p>
         </MediaContainer>
         <MediaContainer>
-          <p style={{ color: "white", fontSize: "24px" }}>Media</p>
+          <p style={{ color: "white", fontSize: "24px", marginBottom:'0' }}>Media</p>
           <Socials>
             <a href="">
               <GitHub />
@@ -91,7 +96,7 @@ export default function Footer() {
           </Socials>
         </MediaContainer>
       </MyData>
-      <Trademark>© Copyright 2023. Made by Olti</Trademark>
+      <Trademark>© All Rights Reserved 2023</Trademark>
     </Container>
   );
 }
