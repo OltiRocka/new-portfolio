@@ -14,12 +14,12 @@ const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
-export default function Home() {
+export default function Home({refs}) {
   return (
     <MainContainer>
       <SocialHanger />
       <HomeContainer>
-        <Navigation />
+        <Navigation refs={refs}/>
         <div style={{ height: "62px" }}></div>
         <MainHome />
       </HomeContainer>

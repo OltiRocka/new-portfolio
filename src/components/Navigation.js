@@ -27,6 +27,7 @@ const Container = styled.div`
   justify-content: center;
   width: 100%;
   position: relative;
+  z-index:1000;
 `;
 
 const NavBar = styled.div`
@@ -61,16 +62,16 @@ const LogoContainer = styled.a`
   justify-content: flex-start;
 `;
 
-const StyledH2 = ({ children, href }) => {
+const StyledH2 = ({ children, href, click }) => {
   return (
-    <HeaderLink href={href}>
+    <HeaderLink href={href} onClick={click}>
       <span className="hash">#</span>
       <span className="text">{children}</span>
     </HeaderLink>
   );
 };
 
-function Navigation() {
+function Navigation({refs}) {
   return (
     <Container>
       <NavBar>
@@ -85,10 +86,10 @@ function Navigation() {
           <h2 style={{ fontSize: "16px" }}>Roka</h2>
         </LogoContainer>
         <ListContainer>
-          <StyledH2 href="https://roka.dev">home</StyledH2>
-          <StyledH2 href="https://roka.dev">projects</StyledH2>
-          <StyledH2 href="https://roka.dev">about-me</StyledH2>
-          <StyledH2 href="https://roka.dev">contacts</StyledH2>
+          <StyledH2 href="" click=''>home</StyledH2>
+          <StyledH2 href="" click={() => refs.projectsRef.current.scrollIntoView({ behavior: 'smooth' })}>projects</StyledH2>
+          <StyledH2 href="" click={() => refs.aboutMeRef.current.scrollIntoView({ behavior: 'smooth' })}>about-me</StyledH2>
+          <StyledH2 href="" click={() => refs.contactsRef.current.scrollIntoView({ behavior: 'smooth' })}>contacts</StyledH2>
         </ListContainer>
       </NavBar>
     </Container>

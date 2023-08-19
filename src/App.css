@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+a svg {
+  stroke: transparent;
+  transition: all 0.3s ease-in-out;
+}
+a svg:hover {
+  stroke: white;
+}
+
 .EmailForm {
   border: 2px solid #abb2bf;
   padding: 20px;
