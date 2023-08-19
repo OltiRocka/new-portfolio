@@ -78,7 +78,7 @@ export default function Footer() {
             <h2 style={{ fontSize: "16px" }}>Roka</h2>
           </LogoContainer>
           <p style={{ color: "white", fontSize: "16px" }}>
-            Data Scientist and<br/> Back-end Developer
+            Data Scientist<br/> and Back-end Developer
           </p>
         </MediaContainer>
         <MediaContainer>
