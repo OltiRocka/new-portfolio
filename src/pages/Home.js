@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 import Navigation from "../components/Navigation";
 import SocialHanger from "../components/SocialHanger";
 import MainHome from "../components/MainHome";
+
 const MainContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -21,7 +22,7 @@ export default function Home({refs}) {
       <HomeContainer>
         <Navigation refs={refs}/>
         <div style={{ height: "62px" }}></div>
-        <MainHome />
+        <MainHome refs={refs} />
       </HomeContainer>
       <SocialHanger fake={true} />
     </MainContainer>

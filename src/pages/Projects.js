@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 import ProjectFormat from "../components/ProjectContainer";
 import TestImage from "../files/ImageOlti.png";
 
+
 const Container = styled.div`
   display: flex;
   margin-top: 64px;

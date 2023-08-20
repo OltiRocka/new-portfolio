@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { ReactComponent as RokaLogo } from "../files/Logo.svg";
+
 const HeaderLink = styled.a`
   font-size: 16px;
   display: inline-block;
@@ -33,6 +34,7 @@ const Container = styled.div`
 const NavBar = styled.div`
   display: flex;
   justify-content: space-between;
+  position:fixed;
   width: 1024px;
   height: 61px;
   justify-content: flex-start;
@@ -42,6 +44,7 @@ const ListContainer = styled.div`
   > *:not(:last-child) {
     margin-right: 32px;
   }
+  
   display: flex;
   flex-direction: row;
   align-self: flex-end;
@@ -60,11 +63,13 @@ const LogoContainer = styled.a`
   align-items: center;
   text-decoration: none;
   justify-content: flex-start;
-`;
 
-const StyledH2 = ({ children, href, click }) => {
+  opacity: 1; 
+  transition: opacity 0.5s ease-in-out;  
+`;
+const StyledH2 = ({ children, href, onClick }) => {
   return (
-    <HeaderLink href={href} onClick={click}>
+    <HeaderLink href={href} onClick={onClick}>
       <span className="hash">#</span>
       <span className="text">{children}</span>
     </HeaderLink>
@@ -72,10 +77,39 @@ const StyledH2 = ({ children, href, click }) => {
 };
 
 function Navigation({refs}) {
+  const [name, setName] = useState(""); // If you're not using this state, you can remove it
+  const [isLogoVisible, setIsLogoVisible] = useState(true);
+
+  const logoRef = React.useRef(null);  // Create a ref to target the LogoContainer
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      logoRef.current.style.opacity = "0";  // Make it invisible with a fade effect
+    } else {
+      logoRef.current.style.opacity = "1";  // Make it fully visible with a fade effect
+    }
+  };
+
+  useEffect(() => {
+    // Attach the event listener
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      // Cleanup - Remove the event listener when the component unmounts
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const onSubmit = (index) => (e) => {
+      e.preventDefault();
+      refs[index].current.scrollIntoView({ behavior: "smooth" });
+  };
+
+
   return (
     <Container>
       <NavBar>
-        <LogoContainer href="https://roka.dev">
+      <LogoContainer href="" ref={logoRef}>
           <RokaLogo
             style={{
               marginRight: "8px",
@@ -86,10 +120,10 @@ function Navigation({refs}) {
           <h2 style={{ fontSize: "16px" }}>Roka</h2>
         </LogoContainer>
         <ListContainer>
-          <StyledH2 href="" click=''>home</StyledH2>
-          <StyledH2 href="" click={() => refs.projectsRef.current.scrollIntoView({ behavior: 'smooth' })}>projects</StyledH2>
-          <StyledH2 href="" click={() => refs.aboutMeRef.current.scrollIntoView({ behavior: 'smooth' })}>about-me</StyledH2>
-          <StyledH2 href="" click={() => refs.contactsRef.current.scrollIntoView({ behavior: 'smooth' })}>contacts</StyledH2>
+          <StyledH2 href="" onClick={onSubmit(3)}>home</StyledH2>
+          <StyledH2 href="" onClick={onSubmit(0)}>projects</StyledH2>
+          <StyledH2 href="" onClick={onSubmit(1)}>about-me</StyledH2>
+          <StyledH2 href="" onClick={onSubmit(2)}>contacts</StyledH2>
         </ListContainer>
       </NavBar>
     </Container>

@@ -1,13 +1,14 @@
-import React from "react";
 import styled from "styled-components";
 import { ReactComponent as Dots } from "../files/Dots.svg";
 import { ReactComponent as BackgroundLogo } from "../files/BackgroundLogo.svg";
 import meImage from "../files/ImageOlti.png";
 import { ReactComponent as Quotes } from "../files/Quotes.svg";
+import React, { useState } from "react";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top:25px;
   align-items: center;
 `;
 
@@ -86,7 +87,14 @@ const Image = styled.div`
   width: inherit;
   height: 386px;
 `;
-function MainHome() {
+function MainHome({refs}) {
+  const [name, setName] = useState(""); // If you're not using this state, you can remove it
+  const [isLogoVisible, setIsLogoVisible] = useState(true);
+
+  const onSubmit = (index) => (e) => {
+    e.preventDefault();
+    refs[index].current.scrollIntoView({ behavior: "smooth" });
+};
   return (
     <Container>
       <MeContainer>
@@ -101,7 +109,7 @@ function MainHome() {
             He crafts responsive machine learning solutions where technologies
             meet creativity
           </p>
-          <ContactButton href="test">Contact Me</ContactButton>
+          <ContactButton href="" onClick={onSubmit(2)}>Contact Me</ContactButton>
         </InfoContainer>
 
         <div style={{ width: "18px" }} />

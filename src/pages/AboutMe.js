@@ -1,6 +1,8 @@
 import React from 'react';
 import { styled } from 'styled-components';
 import MeImage from '../files/ImageOlti.png';
+
+
 const Handler = styled.div`
     display:flex;
     flex-direction:row;

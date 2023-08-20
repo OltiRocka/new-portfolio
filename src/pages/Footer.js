@@ -67,7 +67,7 @@ export default function Footer() {
     <Container>
       <MyData>
         <MediaContainer>
-          <LogoContainer href="https://roka.dev" style={{marginBottom:'0'}}>
+          <LogoContainer href="" style={{marginBottom:'0'}}>
             <RokaLogo
               style={{
                 marginRight: "8px",

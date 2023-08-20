@@ -5,12 +5,15 @@ import Footer from "./pages/Footer";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
-import React, { useRef, useState } from "react";
+import { Results1, Results2, Results3, Results4 } from "./Scrolls";
+import { useRef } from "react";
 
 function App() {
-  const projectsRef = useRef(null);
-  const aboutMeRef = useRef(null);
-  const contactsRef = useRef(null);
+  const resultRef1 = useRef(null);
+  const resultRef2 = useRef(null);
+  const resultRef3 = useRef(null);
+  const resultRef4 = useRef(null);
+
   return (
     <div
       className="App"
@@ -21,17 +24,16 @@ function App() {
         flexDirection: "column",
       }}
     >
-      <Home
-        refs={{ projectsRef,
-          aboutMeRef,
-          contactsRef}}
-        style={{ height: "100vh" }}
-      />
-      <Projects ref={projectsRef} />
+      <Results4 ref={resultRef4} />
+      <Home style={{ height: "100vh" }} refs={[resultRef1, resultRef2, resultRef3, resultRef4]}/>
+      <Results1 ref={resultRef1} />
+      <Projects />
       <Skills />
-      <AboutMe ref={aboutMeRef} />
-      <Contacts ref={contactsRef} />
-      <Footer/>
+      <Results2 ref={resultRef2} />
+      <AboutMe />
+      <Results3 ref={resultRef3} />
+      <Contacts />
+      <Footer />
     </div>
   );
 }

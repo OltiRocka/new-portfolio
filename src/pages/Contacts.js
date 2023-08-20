@@ -1,6 +1,8 @@
 import React from "react";
 import { styled } from "styled-components";
 import EmailForm from "../components/EmailForm";
+import { forwardRef } from "react";
+
 
 const Handler = styled.div`
   display: flex;
