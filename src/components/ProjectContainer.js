@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const MainContainer = styled.div`
-  width: 330px;
+  width: 95%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -33,7 +33,7 @@ const Technologies = styled.p`
   padding: 8px;
 `;
 const ImageContainer = styled.img`
-  width: inherit;
+  width: 100%;
   margin: 0;
   padding: 0;
   height: auto;

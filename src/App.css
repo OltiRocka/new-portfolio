@@ -35,6 +35,10 @@ a svg:hover {
   margin-bottom: 10px;
 }
 
+#form-textarea-control-opinion {
+  height: 250px;
+}
+
 .EmailForm input,
 .EmailForm textarea {
   width: 90%;
@@ -92,4 +96,19 @@ input:-webkit-autofill:active {
 
 .EmailForm .ui.icon.input>i.icon:hover {
   color: #c778dd;
+}
+
+/* For the popup */
+.custom-popup {
+  background-color: #282c33;
+}
+
+/* For the title */
+.custom-title {
+  color: White;
+}
+
+/* For the content */
+.custom-content {
+  color: #abb2bf;
 }

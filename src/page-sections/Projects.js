@@ -1,9 +1,11 @@
 import React from "react";
 import { styled } from "styled-components";
 import ProjectFormat from "../components/ProjectContainer";
-import TestImage from "../files/ImageOlti.png";
-
-
+import InstagramBot from '../files/InstaBot.png'
+import HuggingFace from '../files/Hugging Face.png'
+import Llama2 from '../files/Llama2.png'
+import { Link } from 'react-router-dom';
+import VeshDesh from '../files/VeshDesh.png'
 const Container = styled.div`
   display: flex;
   margin-top: 64px;
@@ -22,6 +24,7 @@ const ProjectsContainer = styled.div`
   flex-direction: row;
   width: 1024px;
   height: auto;
+  justify-content:space-between;
   font-family: "Fira Code", monospace;
   justify-content: space-between;
   @media (max-width:768px){
@@ -59,7 +62,17 @@ const Line = styled.div`
   }
 `;
 
+const ProjectSpacer = styled.div`
+    height:0;
+    width:40px;
+`;
+
+
 export default function Projects() {
+  function scrollTop() {
+    window.scrollTo(0, 0);
+
+  }
   return (
     <Container>
       <Handler>
@@ -68,41 +81,44 @@ export default function Projects() {
           <span style={{ color: "white", fontSize: "32px" }}>projects</span>
           <Line />
         </Heading>
-        <a
-          href="oltio"
-          style={{
-            alignSelf: "left",
-            color: "white",
-            textDecoration: "none",
-            fontWeight: "bold",
-          }}
-        >
-          View all <span style={{ fontSize: "24px" }}>➔</span>
-        </a>
+        <Link to='/projects' onClick={scrollTop}>
+          <a
+            style={{
+              alignSelf: "left",
+              color: "white",
+              textDecoration: "none",
+              fontWeight: "bold",
+            }}
+          >
+            View all <span style={{ fontSize: "24px" }}>➔</span>
+          </a>
+        </Link>
       </Handler>
       <ProjectsContainer>
         <ProjectFormat
-          src={TestImage}
-          tech="Testing random Shit"
-          desc="Testing shit out right now heheheheh"
-          title="Testing this fkn s"
-          url="olti"
+          src={VeshDesh}
+          tech="Python, Rails, Node.js"
+          desc="Automatic Shipping, Stock Managment, other Internal Tools"
+          title="VeshDesh"
+          url="https://veshdesh.com"
+          url_where="Website"
+        />
+        <ProjectSpacer />
+        <ProjectFormat
+          src={HuggingFace}
+          tech="Python, PyTorch, Diffusers"
+          desc="Generative AI, with OpenPose, Canny and Face-Keeping."
+          title="Diffusers Model"
+          url="https://github.com/OltiRocka/image-gen-diffusers"
           url_where="GitHub"
         />
+        <ProjectSpacer />
         <ProjectFormat
-          src={TestImage}
-          tech="Testing random Shit"
-          desc="Testing shit out right now heheheheh"
-          title="Testing this fkn s"
-          url="olti"
-          url_where="GitHub"
-        />
-        <ProjectFormat
-          src={TestImage}
-          tech="Testing random Shit"
-          desc="Testing shit out right now heheheheh"
-          title="Testing this fkn s"
-          url="olti"
+          src={Llama2}
+          tech="Python, LangChain, VectorDB"
+          desc="Using LLaMa 2 to ask about uploaded files."
+          title="LLaMa 2 PDF LLM"
+          url="https://github.com/OltiRocka"
           url_where="GitHub"
         />
       </ProjectsContainer>

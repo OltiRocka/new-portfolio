@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { ReactComponent as RokaLogo } from "../files/Logo.svg";
+import { Link } from "react-router-dom";
 
 const HeaderLink = styled.a`
   font-size: 16px;
@@ -61,7 +62,7 @@ const ListContainer = styled.div`
   }
 `;
 
-const LogoContainer = styled.a`
+const LogoContainer = styled(Link)`
   width: 100px;
   height: 40px;
   color: white;
@@ -85,7 +86,7 @@ const StyledH2 = ({ children, href, onClick }) => {
   );
 };
 
-function Navigation({ refs }) {
+function Navigation({ refs, links }) {
   const [name, setName] = useState(""); // If you're not using this state, you can remove it
   const [isLogoVisible, setIsLogoVisible] = useState(true);
 
@@ -118,7 +119,7 @@ function Navigation({ refs }) {
   return (
     <Container>
       <NavBar>
-        <LogoContainer href="" ref={logoRef}>
+        <LogoContainer to='/' ref={logoRef}>
           <RokaLogo
             style={{
               marginRight: "8px",
@@ -128,7 +129,7 @@ function Navigation({ refs }) {
           />
           <h2 style={{ fontSize: "16px" }}>Roka</h2>
         </LogoContainer>
-        <ListContainer>
+        <ListContainer style={links ? { visibility: 'hidden' } : {}} >
           <StyledH2 href="" onClick={onSubmit(0)}>
             home
           </StyledH2>

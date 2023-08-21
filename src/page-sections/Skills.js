@@ -54,12 +54,12 @@ const Figures = styled.div`
 `;
 
 const SkillSets = styled.div`
-  width: 45%;
+  width: 55%;
   height: auto;
   padding-top: 16px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 40px;
   grid-template-areas: 
       "lang . ."
       "db other ."
@@ -121,7 +121,7 @@ const SkillBoxFrameworks = styled(SkillBox)`
 const Dots2 = styled(Dots)`
 position: absolute;
 margin-top: 40%;
-margin-left: 10%;
+margin-left: 0%;
 width: 63px;
 height: 63px;
 @media (max-width:768px){
@@ -132,8 +132,8 @@ height: 63px;
 
 const Square1 = styled.div`
 position: absolute;
-margin-top: 0;
-margin-left: 70%;
+margin-top: 5%;
+margin-left: 60%;
 width: 86px;
 height: 86px;
 border: 1px solid #ABB2BF;
@@ -145,7 +145,7 @@ border: 1px solid #ABB2BF;
 const Square2 = styled.div`
 position: absolute;
 margin-top: 50%;
-margin-left: 90%;
+margin-left: 70%;
 width: 52px;
 height: 52px;
 border: 1px solid #ABB2BF;

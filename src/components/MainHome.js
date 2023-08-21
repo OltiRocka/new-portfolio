@@ -270,7 +270,7 @@ function MainHome({ refs }) {
         <div
           style={{
             alignSelf: "flex-end",
-            width: "40%",
+            width: "45%",
             color: "white",
             textAlign: "left",
             fontSize: "24px",

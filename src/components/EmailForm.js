@@ -16,6 +16,12 @@ const EmailForm = () => {
         Swal.fire({
           icon: "success",
           title: "Message Sent Successfully",
+          customClass: {
+            popup: 'custom-popup',
+            title: 'custom-title',
+            content: 'custom-content',
+            confirmButton: 'costum-confirm-button'
+          }
         });
       },
       (error) => {
@@ -24,6 +30,12 @@ const EmailForm = () => {
           icon: "error",
           title: "Ooops, something went wrong",
           text: error.text,
+          customClass: {
+            popup: 'custom-popup',
+            title: 'custom-title',
+            content: 'custom-content',
+            confirmButton: 'costum-confirm-button'
+          }
         });
       }
     );
