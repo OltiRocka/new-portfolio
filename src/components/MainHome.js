@@ -3,19 +3,41 @@ import { ReactComponent as Dots } from "../files/Dots.svg";
 import { ReactComponent as BackgroundLogo } from "../files/BackgroundLogo.svg";
 import meImage from "../files/ImageOlti.png";
 import { ReactComponent as Quotes } from "../files/Quotes.svg";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { ReactComponent as Github } from "../files/Github.svg";
+import { ReactComponent as LinkedIn } from "../files/Linkedin.svg";
+import { ReactComponent as Instagram } from "../files/Instagram.svg";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 30px;
   align-items: center;
+  @media (max-width: 767px) {
+    width:95vw;
+  }
 `;
 
+
+const Socials = styled.div`
+  display:none;
+  flex-direction:row;
+  width:40%;
+  @media (max-width:768px){
+    display:flex;
+    justify-content:space-between;
+    margin-left:20px;
+  }
+  
+`;
 const MeContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  @media (max-width: 767px) {
+    flex-direction:column;
+    width:100%;
+  }
 `;
 
 const BigText = styled.div`
@@ -25,11 +47,9 @@ const BigText = styled.div`
   align-items: left;
   font-weight: bold;
   text-align: left;
-  text-align: left;
   .hash {
     color: #c778dd;
   }
-
   .text {
     color: white;
   }
@@ -42,7 +62,15 @@ const InfoContainer = styled.div`
   white-space: normal;
   width: 537px;
   height: 227px;
+  @media (max-width: 767px) {
+    width:95%;
+    margin-bottom:10%;
+  }
 `;
+
+const SocialContainer = ({ children, href }) => {
+  return <a href={href}>{children}</a>;
+};
 
 const ImageContainer = styled.div`
   display: flex;
@@ -50,6 +78,11 @@ const ImageContainer = styled.div`
   width: 469px;
   height: 423px;
   align-items: center;
+  @media (max-width: 767px) {
+    width:100%;
+    height:auto;
+    height:72%;
+  }
 `;
 
 const QuoteContainer = styled.div`
@@ -57,6 +90,9 @@ const QuoteContainer = styled.div`
   flex-direction: column;
   width: 712px;
   height: auto;
+  @media (max-width: 767px) {
+    width:100%;
+    }
 `;
 
 const ContactButton = styled.a`
@@ -72,6 +108,7 @@ const ContactButton = styled.a`
   &:hover {
     background-color: rgba(199, 120, 221, 0.2);
   }
+
 `;
 const CurrentlyWorking = styled.div`
   width: 402px;
@@ -81,12 +118,20 @@ const CurrentlyWorking = styled.div`
   justify-content: flex-start;
   text-align: left;
   align-items: center;
+  @media (max-width: 767px) {
+    width:100%;
+  }
 `;
+const Contact = styled.div`
+display:flex;
+flex-direction:row;`;
 
 const Image = styled.div`
   width: inherit;
   height: 386px;
 `;
+
+
 function MainHome({ refs }) {
   const [name, setName] = useState(""); // If you're not using this state, you can remove it
   const [isLogoVisible, setIsLogoVisible] = useState(true);
@@ -95,6 +140,18 @@ function MainHome({ refs }) {
     e.preventDefault();
     refs[index].current.scrollIntoView({ behavior: "smooth" });
   };
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <Container>
       <MeContainer>
@@ -109,9 +166,21 @@ function MainHome({ refs }) {
             He crafts responsive machine learning solutions where technologies
             meet creativity
           </p>
-          <ContactButton href="" onClick={onSubmit(2)}>
-            Contact Me
-          </ContactButton>
+          <Contact>
+            <ContactButton href="" onClick={onSubmit(4)}>
+              Contact Me
+            </ContactButton><Socials>
+              <SocialContainer href="https://github.com/OltiRocka/" target="_blank">
+                <Github />
+              </SocialContainer>
+              <SocialContainer href="https://www.linkedin.com/in/oltir" target="_blank">
+                <LinkedIn />
+              </SocialContainer>
+              <SocialContainer href="https://www.instagram.com/rocka.dev/" target="_blank">
+                <Instagram />
+              </SocialContainer>
+            </Socials>
+          </Contact>
         </InfoContainer>
 
         <div style={{ width: "18px" }} />
@@ -132,11 +201,16 @@ function MainHome({ refs }) {
               }}
             />
             <Dots
-              style={{
+              style={windowWidth >= 767 ? {
                 position: "absolute",
                 zIndex: "3",
                 marginLeft: "-5%",
                 marginTop: "10%",
+              } : {
+                position: "absolute",
+                zIndex: "3",
+                marginLeft: "20%",
+                marginTop: "-50%",
               }}
             />
           </Image>
@@ -196,7 +270,7 @@ function MainHome({ refs }) {
         <div
           style={{
             alignSelf: "flex-end",
-            width: "30%",
+            width: "40%",
             color: "white",
             textAlign: "left",
             fontSize: "24px",
@@ -208,7 +282,7 @@ function MainHome({ refs }) {
             style={{
               position: "absolute",
               marginTop: "-32px",
-              marginLeft: "181px",
+              marginLeft: "120px",
             }}
           />
           -Fei Fei Li

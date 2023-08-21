@@ -8,6 +8,9 @@ const Handler = styled.div`
   width: 1024px;
   align-items: center;
   margin: 12px;
+  @media (max-width:768px){
+    width:90%;
+  }
 `;
 
 const Container = styled.div`
@@ -17,6 +20,9 @@ const Container = styled.div`
   flex-direction: column;
   margin-bottom: 30px;
   align-items: center;
+  @media (max-width:768px){
+    width:100%;
+  }
 `;
 
 const Content = styled.div`
@@ -25,6 +31,11 @@ const Content = styled.div`
   width: 1024px;
   height: auto;
   justify-content: space-between;
+  @media (max-width:768px){
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+  }
 `;
 
 const Image = styled.div`
@@ -33,12 +44,20 @@ const Image = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width:768px){
+    margin-top:20px;
+    width:90%;
+  }
 `;
 
 const Description = styled.div`
   height: inherit;
   width: 48%;
   font-size: 16px;
+  @media (max-width:768px){
+
+    width:80%;
+  }
 `;
 
 const RefButton = styled.a`
@@ -57,20 +76,22 @@ const RefButton = styled.a`
   }
 `;
 
+const Line = styled.div`
+  width:510px;
+  margin-left:16px;
+  height:0;
+  border:1px solid #C778DD;
+  @media (max-width: 768px){
+    width:0%;
+  }
+`;
 export default function AboutMe() {
   return (
     <Container>
       <Handler>
         <span style={{ color: "#C778DD", fontSize: "32px" }}>#</span>
         <span style={{ color: "white", fontSize: "32px" }}>about-me</span>
-        <div
-          style={{
-            width: "320px",
-            marginLeft: "16px",
-            height: "0",
-            border: "1px solid #C778DD",
-          }}
-        />
+        <Line />
       </Handler>
       <Content>
         <Description>
@@ -88,12 +109,12 @@ export default function AboutMe() {
             mathematics, I look forward to the opportunities this journey may
             bring.
           </p>
-          <RefButton href="">
+          <RefButton href="../files/OltiRokaResume.pdf" download>
             Resume&nbsp;<span style={{ fontSize: "32px" }}>➔</span>
           </RefButton>
         </Description>
         <Image>
-          <img src={MeImage} />
+          <img src={MeImage} style={{ width: '100%' }} />
           <div
             style={{ height: "0", width: "80%", border: "1px solid #C778DD" }}
           />

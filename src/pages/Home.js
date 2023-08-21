@@ -11,6 +11,12 @@ const MainContainer = styled.div`
   justify-content: space-between;
   overflow-x: hidden;
   margin-bottom:50px;
+  @media (max-width:768px){
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+
+  }
 `;
 const HomeContainer = styled.div`
   display: flex;

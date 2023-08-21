@@ -29,6 +29,7 @@ const Container = styled.div`
   width: 100%;
   position: relative;
   z-index: 1000;
+
 `;
 
 const NavBar = styled.div`
@@ -39,6 +40,11 @@ const NavBar = styled.div`
   height: 61px;
   justify-content: flex-start;
   align-items: center;
+  @media (max-width: 767px) {
+    width:100vw;
+    margin-left:10%;
+  }
+
 `;
 const ListContainer = styled.div`
   > *:not(:last-child) {
@@ -50,6 +56,9 @@ const ListContainer = styled.div`
   align-self: flex-end;
   flex: 0 0 auto;
   margin-left: auto;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 const LogoContainer = styled.a`
@@ -89,6 +98,7 @@ function Navigation({ refs }) {
       logoRef.current.style.opacity = "1"; // Make it fully visible with a fade effect
     }
   };
+
 
   useEffect(() => {
     // Attach the event listener

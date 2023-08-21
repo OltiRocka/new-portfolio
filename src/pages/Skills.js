@@ -10,6 +10,9 @@ const Handler = styled.div`
   width: 1024px;
   align-items: center;
   margin: 12px;
+  @media (max-width:768px){
+    width:90%;
+  }
 `;
 
 const Container = styled.div`
@@ -19,6 +22,8 @@ const Container = styled.div`
   flex-direction: column;
   margin-bottom: 30px;
   align-items: center;
+  @media (max-width:768px){
+  }
 `;
 
 const Content = styled.div`
@@ -27,109 +32,159 @@ const Content = styled.div`
   width: 1024px;
   height: auto;
   justify-content: space-between;
+  @media (max-width:768px){
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+  }
 `;
 
 const Figures = styled.div`
-  width: 35%;
+  width: 100%;
   position: relative;
   height: inherit;
+  @media (max-width:768px){
+    position: static; // <-- fix typo here
+    display: block; 
+    height: 300px;  // <-- you can adjust this as per your requirement
+    align-items:center;
+    width:100%;
+
+  }
 `;
 
 const SkillSets = styled.div`
-  width: 60%;
+  width: 45%;
   height: auto;
   padding-top: 16px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  grid-template-areas: 
+      "lang . ."
+      "db other ."
+      "tools frameworks .";
+  @media (max-width:768px){
+        width:90%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "lang db"
+            "other frameworks"
+            "tools tools";
+  }
+`;
+const Line = styled.div`
+  width:510px;
+  margin-left:16px;
+  height:0;
+  border:1px solid #C778DD;
+  @media (max-width: 768px){
+    width:0%;
+  }
 `;
 
+const Dots1 = styled(Dots)`
+position: absolute;
+margin-top: 10%;
+margin-left: -30%;
+width: 63px;
+height: 63px;
+
+`;
+const SkillBoxLanguages = styled(SkillBox)`
+  grid-area: lang;
+`;
+
+const SkillBoxDatabases = styled(SkillBox)`
+  grid-area: db;
+`;
+
+const SkillBoxOther = styled(SkillBox)`
+  grid-area: other;
+  
+`;
+
+const SkillBoxTools = styled(SkillBox)`
+  grid-area: tools;
+
+  @media (max-width:768px){
+    width:100%;
+    grid-column: 1 / span 2;
+  }
+`;
+
+const SkillBoxFrameworks = styled(SkillBox)`
+  grid-area: frameworks;
+
+`;
+const Dots2 = styled(Dots)`
+position: absolute;
+margin-top: 40%;
+margin-left: 10%;
+width: 63px;
+height: 63px;
+@media (max-width:768px){
+  margin-top: 40%;
+  margin-left:-5%;
+}
+`;
+
+const Square1 = styled.div`
+position: absolute;
+margin-top: 0;
+margin-left: 70%;
+width: 86px;
+height: 86px;
+border: 1px solid #ABB2BF;
+@media (max-width:768px){
+  margin-left:60%;
+}
+`;
+
+const Square2 = styled.div`
+position: absolute;
+margin-top: 50%;
+margin-left: 90%;
+width: 52px;
+height: 52px;
+border: 1px solid #ABB2BF;
+@media (max-width:768px){
+  margin-left:80%;
+}
+`;
+
+const Logo1 = styled(Logo)`
+position: absolute;
+margin-top: 45%;
+margin-left: -40%;
+width: 113px;
+height: 113px;
+`;
 export default function Skills() {
   return (
-    <div>
-      <Container>
-        <Handler>
-          <span style={{ color: "#C778DD", fontSize: "32px" }}>#</span>
-          <span style={{ color: "white", fontSize: "32px" }}>skills</span>
-          <div
-            style={{
-              width: "220px",
-              marginLeft: "16px",
-              height: "0",
-              border: "1px solid #C778DD",
-            }}
-          />
-        </Handler>
-        <Content>
-          <Figures>
-            <Dots
-              style={{
-                position: "absolute",
-                marginTop: "10%",
-                marginLeft: "-30%",
-                width: "63px",
-                height: "63px",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                marginTop: "0",
-                marginLeft: "70%",
-                width: "86px",
-                height: "86px",
-                border: "1px solid #ABB2BF",
-              }}
-            />
-            <Logo
-              style={{
-                position: "absolute",
-                marginTop: "45%",
-                marginLeft: "-40%",
-                width: "113px",
-                height: "113px",
-              }}
-            />
-            <Dots
-              style={{
-                position: "absolute",
-                marginTop: "40%",
-                marginLeft: "10%",
-                width: "63px",
-                height: "63px",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                marginTop: "50%",
-                marginLeft: "90%",
-                width: "52px",
-                height: "52px",
-                border: "1px solid #ABB2BF",
-              }}
-            />
-          </Figures>
-          <SkillSets>
-            <SkillBox type="Languages" skills="Python Ruby Rust JavaScript" />
-            <div>
-              <SkillBox type="Databases" skills="SQLite PostgreSQL MongoDB" />
-              <SkillBox type="Other" skills="HTML CSS EJS SCSS REST" />
-            </div>
-            <div>
-              <SkillBox
-                type="Tools"
-                skills="VSCode Neovim Linux FFmpeg Git Some Other Cool Shit"
-              />
-
-              <SkillBox
-                type="Frameworks"
-                skills="TensorFlow PyTorch Node.js FastAPI Django"
-              />
-            </div>
-          </SkillSets>
-        </Content>
-      </Container>
-    </div>
+    <Container>
+      <Handler>
+        <span style={{ color: "#C778DD", fontSize: "32px" }}>#</span>
+        <span style={{ color: "white", fontSize: "32px" }}>skills</span>
+        <Line />
+      </Handler>
+      <Content>
+        <Figures>
+          <Dots1 />
+          <Square1 />
+          <Logo1 />
+          <Dots2 />
+          <Square2 />
+        </Figures>
+        <SkillSets>
+          <SkillBoxLanguages type="Languages" skills="Python Ruby Rust JavaScript" />
+          <SkillBoxDatabases type="Databases" skills="SQLite PostgreSQL MongoDB" />
+          <SkillBoxOther type="Other" skills="HTML CSS EJS SCSS REST" />
+          <SkillBoxFrameworks type="Frameworks" skills="TensorFlow PyTorch Node.js FastAPI Django" />
+          <SkillBoxTools type="Tools" skills="VSCode Neovim Linux FFmpeg Git Some Other Cool Shit" />
+        </SkillSets>
+      </Content>
+    </Container >
   );
 }

@@ -9,6 +9,9 @@ const Handler = styled.div`
   width: 1024px;
   align-items: center;
   margin: 12px;
+  @media (max-width:768px){
+    width:90%;
+  }
 `;
 
 const Container = styled.div`
@@ -19,6 +22,9 @@ const Container = styled.div`
   margin-bottom: 120px;
   margin-top:60px;
   align-items: center;
+  @media (max-width:768px){
+  margin-bottom:20px;
+  }
 `;
 
 const Content = styled.div`
@@ -27,6 +33,11 @@ const Content = styled.div`
   width: 1024px;
   height: auto;
   justify-content: space-between;
+  @media (max-width:768px){
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+  }
 `;
 
 const DescText = styled.p`
@@ -37,22 +48,26 @@ const DescText = styled.p`
   display: flex;
   align-items: center;
   padding-bottom: 50px;
+  @media (max-width:768px){
+    width:80%;
+  }
 `;
-
+const Line = styled.div`
+  width:510px;
+  margin-left:16px;
+  height:0;
+  border:1px solid #C778DD;
+  @media (max-width: 768px){
+    width:0%;
+  }
+`;
 export default function Contacts() {
   return (
     <Container>
       <Handler>
         <span style={{ color: "#C778DD", fontSize: "32px" }}>#</span>
         <span style={{ color: "white", fontSize: "32px" }}>contacts</span>
-        <div
-          style={{
-            width: "120px",
-            marginLeft: "16px",
-            height: "0",
-            border: "1px solid #C778DD",
-          }}
-        />
+        <Line />
       </Handler>
       <Content>
         <DescText>

@@ -7,6 +7,9 @@ const Container = styled.div`
   width: 178px;
   height: auto;
   margin-top: 10px;
+  @media (max-width:768px){
+    width:95%;
+  }
 `;
 const SkillType = styled.p`
   border: 1px solid #abb2bf;

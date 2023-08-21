@@ -15,6 +15,14 @@ const Container = styled.div`
   flex-direction: column;
   margin-left: 20px;
   align-items: center;
+  @media (max-width: 767px) {
+    /* Add your phone-specific styles here */
+    margin-left: 5px;
+    /* Any other styles you want for phone views can be added here */
+  }
+  @media (max-width: 767px) {
+    display:none;
+  }
 `;
 
 const ImageContainer = ({ children, href }) => {
@@ -27,21 +35,21 @@ function SocialHanger({ fake }) {
       style={
         fake
           ? {
-              marginRight: "20px",
-              marginLeft: "0px",
-              visibility: "hidden",
-            }
+            marginRight: "20px",
+            marginLeft: "0px",
+            visibility: "hidden",
+          }
           : {}
       }
     >
       <Hanger />
-      <ImageContainer href="roka.dev">
+      <ImageContainer href="https://github.com/OltiRocka/" target="_blank">
         <Github />
       </ImageContainer>
-      <ImageContainer href="roka.dev">
+      <ImageContainer href="https://www.linkedin.com/in/oltir" target="_blank">
         <LinkedIn />
       </ImageContainer>
-      <ImageContainer href="roka.dev">
+      <ImageContainer href="https://www.instagram.com/rocka.dev/" target="_blank">
         <Instagram />
       </ImageContainer>
     </Container>

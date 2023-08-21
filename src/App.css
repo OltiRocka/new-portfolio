@@ -6,6 +6,7 @@ a svg {
   stroke: transparent;
   transition: all 0.3s ease-in-out;
 }
+
 a svg:hover {
   stroke: white;
 }
@@ -19,6 +20,12 @@ a svg:hover {
   flex-direction: column;
   margin: 0 auto;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width:768px) {
+  .EmailForm {
+    width: 80%
+  }
 }
 
 .EmailForm label {
@@ -55,6 +62,15 @@ input:-webkit-autofill:active {
   outline: none;
 }
 
+.button-container {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  justify-content: flex-start;
+  /* This will align the button to the left */
+}
+
 .EmailForm button {
   background-color: transparent;
   color: white;
@@ -62,6 +78,7 @@ input:-webkit-autofill:active {
   padding: 10px 15px;
   font-weight: bold;
   cursor: pointer;
+  /* This line aligns the button to the left */
   transition: background-color 0.3s ease;
 }
 
@@ -69,10 +86,10 @@ input:-webkit-autofill:active {
   background-color: #bb6bd6;
 }
 
-.EmailForm .ui.icon.input > i.icon {
+.EmailForm .ui.icon.input>i.icon {
   color: #abb2bf;
 }
 
-.EmailForm .ui.icon.input > i.icon:hover {
+.EmailForm .ui.icon.input>i.icon:hover {
   color: #c778dd;
 }

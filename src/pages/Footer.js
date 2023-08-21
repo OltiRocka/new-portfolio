@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { styled } from "styled-components";
 import { ReactComponent as RokaLogo } from "../files/Logo.svg";
 import { ReactComponent as Instagram } from "../files/Instagram.svg";
@@ -13,6 +13,9 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (max-width:768px){
+    width:100vw;
+  }
 `;
 
 const MyData = styled.div`
@@ -52,6 +55,7 @@ const LogoContainer = styled.a`
   flex-direction: row;
   align-items: center;
   text-decoration: none;
+
 `;
 
 const Socials = styled.div`
@@ -63,10 +67,21 @@ const Socials = styled.div`
 `;
 
 export default function Footer() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <Container>
       <MyData>
-        <MediaContainer>
+        <MediaContainer style={windowWidth <= 768 ? { width: '70%' } : {}}>
           <LogoContainer href="" style={{ marginBottom: "0" }}>
             <RokaLogo
               style={{
@@ -87,13 +102,13 @@ export default function Footer() {
             Media
           </p>
           <Socials>
-            <a href="">
+            <a href="https://github.com/OltiRocka/" target="_blank">
               <GitHub />
             </a>
-            <a href="">
+            <a href="https://www.linkedin.com/in/oltir" target="_blank">
               <LinkedIn />
             </a>
-            <a href="">
+            <a href="https://www.instagram.com/rocka.dev/" target="_blank">
               <Instagram />
             </a>
           </Socials>

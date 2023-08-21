@@ -10,6 +10,11 @@ const Container = styled.div`
   font-family: "Fira Code", monospace;
   flex-direction: column;
   align-items: center;
+  @media (max-width:768px){
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+  }
 `;
 
 const ProjectsContainer = styled.div`
@@ -19,6 +24,11 @@ const ProjectsContainer = styled.div`
   height: auto;
   font-family: "Fira Code", monospace;
   justify-content: space-between;
+  @media (max-width:768px){
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+  }
 `;
 
 const Handler = styled.div`
@@ -27,6 +37,9 @@ const Handler = styled.div`
   width: 1024px;
   align-items: center;
   justify-content: space-between;
+  @media (max-width:768px){
+    width:90%;
+  }
 `;
 
 const Heading = styled.div`
@@ -36,62 +49,63 @@ const Heading = styled.div`
   align-items: center;
 `;
 
+const Line = styled.div`
+  width:510px;
+  margin-left:16px;
+  height:0;
+  border:1px solid #C778DD;
+  @media (max-width: 768px){
+    width:0%;
+  }
+`;
+
 export default function Projects() {
   return (
-    <div style={{ height: "auto" , marginTop:'20px'}}>
-      <Container>
-        <Handler>
-          <Heading>
-            <span style={{ color: "#C778DD", fontSize: "32px" }}>#</span>
-            <span style={{ color: "white", fontSize: "32px" }}>projects</span>
-            <div
-              style={{
-                width: "510px",
-                marginLeft: "16px",
-                height: "0",
-                border: "1px solid #C778DD",
-              }}
-            />
-          </Heading>
-          <a
-            href="oltio"
-            style={{
-              alignSelf: "left",
-              color: "white",
-              textDecoration: "none",
-              fontWeight: "bold",
-            }}
-          >
-            View all <span style={{ fontSize: "24px" }}>➔</span>
-          </a>
-        </Handler>
-        <ProjectsContainer>
-          <ProjectFormat
-            src={TestImage}
-            tech="Testing random Shit"
-            desc="Testing shit out right now heheheheh"
-            title="Testing this fkn s"
-            url="olti"
-            url_where="GitHub"
-          />
-          <ProjectFormat
-            src={TestImage}
-            tech="Testing random Shit"
-            desc="Testing shit out right now heheheheh"
-            title="Testing this fkn s"
-            url="olti"
-            url_where="GitHub"
-          />
-          <ProjectFormat
-            src={TestImage}
-            tech="Testing random Shit"
-            desc="Testing shit out right now heheheheh"
-            title="Testing this fkn s"
-            url="olti"
-            url_where="GitHub"
-          />
-        </ProjectsContainer>
-      </Container>
-    </div>
+    <Container>
+      <Handler>
+        <Heading>
+          <span style={{ color: "#C778DD", fontSize: "32px" }}>#</span>
+          <span style={{ color: "white", fontSize: "32px" }}>projects</span>
+          <Line />
+        </Heading>
+        <a
+          href="oltio"
+          style={{
+            alignSelf: "left",
+            color: "white",
+            textDecoration: "none",
+            fontWeight: "bold",
+          }}
+        >
+          View all <span style={{ fontSize: "24px" }}>➔</span>
+        </a>
+      </Handler>
+      <ProjectsContainer>
+        <ProjectFormat
+          src={TestImage}
+          tech="Testing random Shit"
+          desc="Testing shit out right now heheheheh"
+          title="Testing this fkn s"
+          url="olti"
+          url_where="GitHub"
+        />
+        <ProjectFormat
+          src={TestImage}
+          tech="Testing random Shit"
+          desc="Testing shit out right now heheheheh"
+          title="Testing this fkn s"
+          url="olti"
+          url_where="GitHub"
+        />
+        <ProjectFormat
+          src={TestImage}
+          tech="Testing random Shit"
+          desc="Testing shit out right now heheheheh"
+          title="Testing this fkn s"
+          url="olti"
+          url_where="GitHub"
+        />
+      </ProjectsContainer>
+    </Container>
   );
 }

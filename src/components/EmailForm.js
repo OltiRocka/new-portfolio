@@ -35,7 +35,7 @@ const EmailForm = () => {
         <Form.Field
           id="form-input-control-last-name"
           control={Input}
-          label="Your Name"
+          label="Email Me"
           name="from_name"
           placeholder="Name…"
           required
@@ -45,7 +45,7 @@ const EmailForm = () => {
         <Form.Field
           id="form-input-control-email"
           control={Input}
-          label="Your Email"
+          label=""
           name="from_email"
           placeholder="Email…"
           required
@@ -55,14 +55,16 @@ const EmailForm = () => {
         <Form.Field
           id="form-textarea-control-opinion"
           control={TextArea}
-          label="Message"
+          label=""
           name="message"
           placeholder="Message…"
           required
         />
-        <Button type="submit" color="green">
-          Submit
-        </Button>
+        <div class="button-container">
+          <Button type="submit" color="green">
+            Submit
+          </Button>
+        </div>
       </Form>
     </div>
   );
