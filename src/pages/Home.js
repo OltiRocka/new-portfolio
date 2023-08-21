@@ -10,17 +10,18 @@ const MainContainer = styled.div`
   font-family: "Fira Code", monospace;
   justify-content: space-between;
   overflow-x: hidden;
+  margin-bottom:50px;
 `;
 const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
-export default function Home({refs}) {
+export default function Home({ refs }) {
   return (
     <MainContainer>
       <SocialHanger />
       <HomeContainer>
-        <Navigation refs={refs}/>
+        <Navigation refs={refs} />
         <div style={{ height: "62px" }}></div>
         <MainHome refs={refs} />
       </HomeContainer>

@@ -23,8 +23,8 @@ const MyData = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  &:div{
-    flex:1;
+  &:div {
+    flex: 1;
   }
 `;
 
@@ -59,7 +59,7 @@ const Socials = styled.div`
   height: auto;
   display: flex;
   flex-direction: row;
-  margin-top:0;
+  margin-top: 0;
 `;
 
 export default function Footer() {
@@ -67,7 +67,7 @@ export default function Footer() {
     <Container>
       <MyData>
         <MediaContainer>
-          <LogoContainer href="" style={{marginBottom:'0'}}>
+          <LogoContainer href="" style={{ marginBottom: "0" }}>
             <RokaLogo
               style={{
                 marginRight: "8px",
@@ -77,12 +77,15 @@ export default function Footer() {
             />
             <h2 style={{ fontSize: "16px" }}>Roka</h2>
           </LogoContainer>
-          <p style={{ color: "white", fontSize: "16px", marginTop:'0' }}>
-            Data Scientist<br/> and Back-end Developer
+          <p style={{ color: "white", fontSize: "16px", marginTop: "0" }}>
+            Data Scientist
+            <br /> and Back-end Developer
           </p>
         </MediaContainer>
         <MediaContainer>
-          <p style={{ color: "white", fontSize: "24px", marginBottom:'0' }}>Media</p>
+          <p style={{ color: "white", fontSize: "24px", marginBottom: "0" }}>
+            Media
+          </p>
           <Socials>
             <a href="">
               <GitHub />

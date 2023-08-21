@@ -38,7 +38,7 @@ const Heading = styled.div`
 
 export default function Projects() {
   return (
-    <div style={{ height: "auto" }}>
+    <div style={{ height: "auto" , marginTop:'20px'}}>
       <Container>
         <Handler>
           <Heading>

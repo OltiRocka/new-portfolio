@@ -14,7 +14,7 @@ const Handler = styled.div`
 
 const Container = styled.div`
   display: flex;
-  margin-top: 112px;
+  margin-top: 60px;
   font-family: "Fira Code", monospace;
   flex-direction: column;
   margin-bottom: 30px;

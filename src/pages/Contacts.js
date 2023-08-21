@@ -3,7 +3,6 @@ import { styled } from "styled-components";
 import EmailForm from "../components/EmailForm";
 import { forwardRef } from "react";
 
-
 const Handler = styled.div`
   display: flex;
   flex-direction: row;
@@ -17,7 +16,8 @@ const Container = styled.div`
   margin-top: 112px;
   font-family: "Fira Code", monospace;
   flex-direction: column;
-  margin-bottom: 30px;
+  margin-bottom: 120px;
+  margin-top:60px;
   align-items: center;
 `;
 
